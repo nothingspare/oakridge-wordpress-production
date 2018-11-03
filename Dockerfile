@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
 
 RUN docker-php-ext-configure opcache --enable-opcache \
     && docker-php-ext-install opcache
-COPY opcache.ini /usr/local/etc/php
+COPY opcache.ini /usr/local/etc/php/conf.d
 
 # Cleanup
 RUN apt-get clean
